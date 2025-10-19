@@ -15,6 +15,11 @@
       align-items: center; 
       justify-content: space-between;
     }
+    .navbar{
+      position: sticky;
+      top: 0;   
+      background-color: white;
+    }
     .nav-logo{
       font-size:3rem; 
     }
@@ -38,7 +43,7 @@
     
     /* Psuedo-class: any-link */
     :any-link:hover{
-      color: red;
+      background-color: lightcoral;
       text-decoration: none;
     }
     /* Psuedo-class: focus */
@@ -49,9 +54,8 @@
     }
     
     /* Psuedo-class: visited */
-    /* TODO has no effect??????? */
     a:visited{
-      background-color: gray;
+      color:red; 
     }
 
     /* Psuedo-class: where() */
@@ -61,33 +65,52 @@
       padding: 0;
     }
     :where(img){
-      max-height: 100vh; 
+      max-height: 50vh; 
     }
 
     /* Psuedo-class: has() */
     /* it's becoming less meaningful */
-    :has(img){
+    div:has(h2){
       border: 1px black; 
     }
-
-    /* .flex-container{
+    
+    /* Psuedo-class: is() */
+    :is(.flex-container-reverse, .flex-container){
+      /* TODO add font */
+      letter-spacing:0.01rem; 
+    }
+    :is(.nav-menu, ul, .github){
+      border: 3px solid black; 
+    }
+    :is(.fact-text){
+      /* TODO change this such that the .fact-image max-width + .fact-text max-width == 100vw with variables :)*/
+      max-width: 50vw;
+    }
+    :is(.flex-container, .flex-container-reverse){
+      display:flex; 
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    :is(.flex-container, .flex-container-reverse) * {
+      /* background-color: coral; */
       display:flex; 
     }
-    .flex-container * {
-      display:flex; 
-    } */
+
+    /* Psuedo-class placeholder-shown */
+    /* I don't think this is right.  */
+    :placeholder-shown {
+      background-color: lightcyan; 
+    }
+
     /* chaff (this code isn't that important) */
     footer{
-      /* ow my eyes */
       background-color: lightgray;
     }
     
     .contact * {
       background-color: gray;
     }
-    :placeholder-shown {
-      background-color: red; 
-    }
+
   </style>
 </head>
 <body>
@@ -110,7 +133,7 @@
 
   <!-- Fact 1: Image Left, Text Right -->
   <section id="fact1" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container-reverse">
       <div class="fact-image">
         <img src="images/fact1.jpg" alt="Fact 1 Illustration" />
       </div>
@@ -136,7 +159,7 @@
 
   <!-- Fact 3: Image Left, Text Right -->
   <section id="fact3" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container-reverse">
       <div class="fact-image">
         <img src="images/fact3.jpg" alt="Climate Regulation" />
       </div>
@@ -162,7 +185,7 @@
 
   <!-- Fact 5: Image Left, Text Right -->
   <section id="fact5" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container-reverse">
       <div class="fact-image">
         <img src="images/fact5.jpg" alt="Water Cycle Disruption" />
       </div>
@@ -191,13 +214,11 @@
     <!-- TODO make this into a block :) -->
     <div class="contact">
       <ul class="socialmedia">
-        <!-- TODO put fake contact information instead of nonsense -->
         <li>Instagram</li>
         <li>Facebook</li>
         <li>Twitter</li>
       </ul>
       <ul class="contact3">
-        <!-- TODO put fake contact information instead of nonsense -->
         <li>Email</li>
         <li>Phone</li>
         <li>Location</li>
