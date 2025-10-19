@@ -7,131 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    .contact, .nav-container{
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between;
-    }
-    .navbar{
-      position: sticky;
-      top: 0;   
-      background-color: white;
-    }
-    .nav-logo{
-      font-size:3rem; 
-    }
-    .nav-menu{
-      display:flex; 
-      gap: 1rem; 
-    }
 
-    /* Psuedo-class: active */
-    .fact-text:active {
-      background-color: #DDDDDD;
-    }
-
-    /* Psuedo-class: hover */
-    .fact-text:hover{
-      background-color: #EEEEEE;
-    }
-    .fact-text:hover h2{
-      text-decoration: underline;
-    }
-    
-    /* Psuedo-class: any-link */
-    :any-link:hover{
-      background-color: lightcoral; 
-      text-decoration: none;
-    }
-    /* Psuedo-class: focus */
-    /* it looks so bad i'm sorry */
-    :where(:any-link:focus){ 
-      outline: none;
-      font-weight:1000; 
-    }
-    footer :where(img){
-      max-height: 4rem;
-    }
-    
-    /* Psuedo-class: visited */
-    a:visited{
-      color:red; 
-    }
-
-    /* Psuedo-class: where() */
-    :where(ul){
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    :where(img){
-      max-height: 50vh; 
-    }
-
-    /* Psuedo-class: has() */
-    /* it's becoming less meaningful */
-    div:has(h2){
-      border: 1px black; 
-    }
-    
-    /* Psuedo-class: is() */
-    :is(.flex-container-reverse, .flex-container){
-      /* TODO add font */
-      letter-spacing:0.01rem; 
-    }
-    :is(.nav-menu, ul, .github){
-      border: 3px solid black; 
-    }
-    :is(.fact-text){
-      /* TODO change this such that the .fact-image max-width + .fact-text max-width == 100vw with variables :)*/
-      max-width: 50vw;
-    }
-    :is(.flex-container, .flex-container-reverse){
-      display:flex; 
-      justify-content: space-between;
-    }
-    :is(.flex-container, .flex-container-reverse) * {
-      /* background-color: coral; */
-      display:flex; 
-    }
-
-    /* Psuedo-class :first-child */
-    /* Psuedo-class :last-child */
-    .contact:last-child :first-child{
-      max-width: 20rem;
-    }
-    #nav-words{
-      font-size: 1.25rem;
-    }
-    
-
-    /* Psuedo-class placeholder-shown */
-    /* I don't think this is right.  */
-    :placeholder-shown {
-      background-color: lightcyan; 
-    }
-
-    /* chaff (this code isn't that important) */
-    footer{
-      background-color: lightgray;
-    }
-    
-    .contact * {
-      background-color: gray;
-    }
-    .socialmedia{
-      display: flex; 
-    }
-    
-    @media (max-width: 600px){
-      /* Footer. It looks so bad */
-      .contact {
-        flex-direction: column;
-      }
-      .nav-logo {
-        font-size: 2rem; 
-      }
-    }
 
   </style>
 </head>
@@ -146,32 +22,38 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
-  </nav>
+  </nav>  
 
   <!-- Full-Screen Hero Image -->
   <header id="home" class="hero">
-    <img src="" alt="Deforestation Impact on Forests" />
+    <img src="assets/images/cover.jpg" alt="Deforestation Impact on Forests" />
   </header>
 
   <!-- Fact 1: Image Left, Text Right -->
   <section id="fact1" class="fact-section">
-    <div class="flex-container-reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="assets/images/fact1.jpg" alt="Fact 1 Illustration" />
       </div>
       <div class="fact-text">
-        <h2>Fact 1: Trees Absorb CO₂</h2>
-        <p>Forests act as carbon sinks, absorbing significant amounts of carbon dioxide. Deforestation releases stored carbon, contributing to global warming [file:1].</p>
+        <h2>Trees Absorb CO₂</h2>
+        <p>Trees play a crucial role in absorbing carbon dioxide (CO₂) from the atmosphere. 
+          Through the process of photosynthesis, trees take in CO₂ and <span class="important-text">convert it into oxygen and biomass</span>, helping to reduce the overall concentration of greenhouse gases.
+          Forests act as natural carbon sinks, mitigating the effects of climate change by storing large amounts of carbon in their leaves, trunks, and roots.
+          In a typical year, forests absorb roughly <span class="important-text">30%</span> of the carbon emissions produced by human activities such as burning fossil fuels. </p>
       </div>
     </div>
   </section>
 
   <!-- Fact 2: Text Left, Image Right -->
   <section id="fact2" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 2: Loss of Biodiversity</h2>
-        <p>Over 80% of terrestrial species live in forests. Clearing forests destroys habitats and threatens countless species with extinction [file:1].</p>
+        <p>Deforestation leads to a significant loss of biodiversity as countless plant and animal species lose their natural habitats. 
+          Forests are home to more than <span class="important-text">80%</span> of terrestrial species, providing essential ecosystems that support complex food webs and ecological processes.
+          When trees are cut down, these species face <span class="important-text">displacement, reduced populations, and increased risk of extinction.</span>
+          The loss of biodiversity not only threatens wildlife but also disrupts ecosystem services vital to human well-being, such as pollination, water purification, and climate regulation. </p>
       </div>
       <div class="fact-image">
         <img src="assets/images/fact2.jpg" alt="Biodiversity Loss" />
@@ -181,7 +63,7 @@
 
   <!-- Fact 3: Image Left, Text Right -->
   <section id="fact3" class="fact-section">
-    <div class="flex-container-reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="images/fact3.jpg" alt="Climate Regulation" />
       </div>
@@ -194,7 +76,7 @@
 
   <!-- Fact 4: Text Left, Image Right -->
   <section id="fact4" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 4: Soil Erosion and Degradation</h2>
         <p>Tree roots stabilize soil. Without them, erosion increases, leading to landslides and reduced agricultural productivity [file:1].</p>
@@ -207,7 +89,7 @@
 
   <!-- Fact 5: Image Left, Text Right -->
   <section id="fact5" class="fact-section">
-    <div class="flex-container-reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="images/fact5.jpg" alt="Water Cycle Disruption" />
       </div>
@@ -220,7 +102,7 @@
 
   <!-- Fact 6: Text Left, Image Right -->
   <section id="fact6" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 6: Contribution to Global Emissions</h2>
         <p>Deforestation accounts for nearly 15% of all greenhouse gas emissions—more than the entire global transportation sector [file:1].</p>

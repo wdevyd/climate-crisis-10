@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Slabo+27px&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+body, html {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Text styles */
+
+.fact-section {
+    margin-bottom: 30px;
+    background-color: beige;
+}
+
+.fact-text {
+  flex:1;
+  padding:1rem;
+  font-size: 1.2em;
+}
+/* Psuedo-class: active */
+.fact-text:active {
+  background-color: #DDDDDD;
+}
+
+/* Psuedo-class: hover */
+.fact-text:hover{
+  background-color: #EEEEEE;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+#fact1.important-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(16, 80, 16);
+}
+
+#fact1 h2 {
+    color: rgb(16,80,16);
+}
+
+#fact2.imporant-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(214, 162, 19);
+}
+
+
+/* Image styles */
+
+header#home.hero img {
+  width: 100vw;    
+  height: 25vh;   
+  height: 500px;
+  object-fit: cover; 
+  max-width: none;
+  filter : brightness(40%);
+  margin-bottom: 30px;
+}
+
+.fact-image {
+  flex: 0 0 400px;
+}
+
+.fact-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Container styles */
+
+.flex-container,
+.flex-container-reverse {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+
+
+/* Mobile style */
+
+@media (max-width: 600px) {
+  .flex-container, .flex-container-reverse {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fact-image img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1rem auto;
+    display: block;
+  }
+}
+
+.contact, .nav-container{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+}
+.navbar{
+  position: sticky;
+  z-index: 999999;
+  top: 0;   
+  background-color: white;
+}
+.nav-logo{
+  font-size:3rem; 
+}
+.nav-menu{
+  display:flex; 
+  gap: 1rem; 
+}
+
+
+/* Psuedo-class: any-link */
+:any-link:hover{
+  background-color: lightcoral; 
+  text-decoration: none;
+}
+/* Psuedo-class: focus */
+/* it looks so bad i'm sorry */
+:where(:any-link:focus){ 
+  outline: none;
+  font-weight:1000; 
+} 
+footer :where(img){
+  max-height: 4rem;
+}
+
+/* Psuedo-class: visited */
+a:visited{
+  color:red; 
+}
+
+/* Psuedo-class: where() */
+:is(ul){
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+:where(img){
+  max-height: 50vh; 
+}
+
+/* Psuedo-class: has() */
+/* it's becoming less meaningful */
+div:has(h2){
+  border: 1px solid black; 
+}
+
+/* Psuedo-class :first-child */
+/* Psuedo-class :last-child */
+.contact:last-child :first-child{
+  max-width: 20rem;
+}
+#nav-words{
+  font-size: 1.25rem;
+}
+
+
+/* Psuedo-class placeholder-shown */
+/* I don't think this is right.  */
+:placeholder-shown {
+  background-color: lightcyan; 
+}
+
+/* chaff (this code isn't that important) */
+footer{
+  background-color: lightgray;
+}
+
+.contact * {
+  background-color: gray;
+}
+.socialmedia{
+  display: flex; 
+}
