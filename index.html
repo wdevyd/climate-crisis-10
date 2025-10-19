@@ -23,46 +23,71 @@
       gap: 1rem; 
     }
 
-    /* Psuedo-class: Active */
+    /* Psuedo-class: active */
     .fact-text:active {
       background-color: #DDDDDD;
     }
 
-    /* Psuedo-class: Hover */
-    a:hover{
-      color: red;
-      text-decoration: none;
-    }
+    /* Psuedo-class: hover */
     .fact-text:hover{
       background-color: #EEEEEE;
     }
     .fact-text:hover h2{
       text-decoration: underline;
     }
-
-    /* Psuedo-class: Focus */
+    
+    /* Psuedo-class: any-link */
+    :any-link:hover{
+      color: red;
+      text-decoration: none;
+    }
+    /* Psuedo-class: focus */
     /* it looks so bad i'm sorry */
-    a:focus{ 
+    :where(:any-link:focus){ 
       outline: none;
-      background-color: lightcoral;
+      font-weight:1000; 
+    }
+    
+    /* Psuedo-class: visited */
+    /* TODO has no effect??????? */
+    a:visited{
+      background-color: gray;
     }
 
-    
+    /* Psuedo-class: where() */
+    :where(ul){
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    :where(img){
+      max-height: 100vh; 
+    }
 
+    /* Psuedo-class: has() */
+    /* it's becoming less meaningful */
+    :has(img){
+      border: 1px black; 
+    }
+
+    /* .flex-container{
+      display:flex; 
+    }
+    .flex-container * {
+      display:flex; 
+    } */
     /* chaff (this code isn't that important) */
     footer{
       /* ow my eyes */
       background-color: lightgray;
     }
-    footer ul, .nav-menu{
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+    
     .contact * {
       background-color: gray;
     }
-
+    :placeholder-shown {
+      background-color: red; 
+    }
   </style>
 </head>
 <body>
