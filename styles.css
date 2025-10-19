@@ -1,10 +1,54 @@
-/* Supprime marges et padding par défaut du body et html */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Slabo+27px&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
 body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Text styles */
+
+.fact-section {
+    margin-bottom: 30px;
+}
+
+.fact-text {
+    margin-left: 5%;
+    max-width: 50%;
+    font-size: 1.2em;
+}
+
+h2 {
+    text-align: center;
+}
+
+.fact-section {
+    background-color: beige;
+}
+
+#fact1.important-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(16, 80, 16);
+}
+
+#fact1 h2 {
+    color: rgb(16,80,16);
+}
+
+#fact2.imporant-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(214, 162, 19);
+}
+
+
+
+
+
+
+/* Image styles */
 
 header#home.hero img {
   width: 100vw;    
@@ -21,8 +65,11 @@ header#home.hero img {
   width: 100%;      
   height: auto;     
   display: block;  
-  margin-right: 80px;
+  margin-right: 200px;
 }
+
+
+/* Container styles */
 
 .flex-container {
   display: flex;
