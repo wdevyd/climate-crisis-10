@@ -1,0 +1,37 @@
+/* Supprime marges et padding par défaut du body et html */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+header#home.hero img {
+  width: 100vw;    
+  height: 25vh;   
+  height: 500px;
+  object-fit: cover; 
+  max-width: none;
+  filter : brightness(40%);
+  margin-bottom: 30px;
+}
+
+.fact-image img {
+  max-width: 300px; 
+  width: 100%;      
+  height: auto;     
+  display: block;  
+  margin-right: 80px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-container.reverse {
+    flex-direction: row-reverse;
+
+}
