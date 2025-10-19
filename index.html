@@ -6,6 +6,114 @@
   <title>Deforestation & Climate Change</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .contact, .nav-container{
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+    }
+    .navbar{
+      position: sticky;
+      top: 0;   
+      background-color: white;
+    }
+    .nav-logo{
+      font-size:3rem; 
+    }
+    .nav-menu{
+      display:flex; 
+      gap: 1rem; 
+    }
+
+    /* Psuedo-class: active */
+    .fact-text:active {
+      background-color: #DDDDDD;
+    }
+
+    /* Psuedo-class: hover */
+    .fact-text:hover{
+      background-color: #EEEEEE;
+    }
+    
+    /* Psuedo-class: any-link */
+    :any-link:hover{
+      background-color: lightcoral; 
+      text-decoration: none;
+    }
+    /* Psuedo-class: focus */
+    /* it looks so bad i'm sorry */
+    :where(:any-link:focus){ 
+      outline: none;
+      font-weight:1000; 
+    } 
+    footer :where(img){
+      max-height: 4rem;
+    }
+    
+    /* Psuedo-class: visited */
+    a:visited{
+      color:red; 
+    }
+
+    /* Psuedo-class: where() */
+    :where(ul){
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    :where(img){
+      max-height: 50vh; 
+    }
+
+    /* Psuedo-class: has() */
+    /* it's becoming less meaningful */
+    div:has(h2){
+      border: 1px black; 
+    }
+    
+    :is(.nav-menu, ul, .github){
+      border: 3px solid black; 
+    }
+
+    /* Psuedo-class :first-child */
+    /* Psuedo-class :last-child */
+    .contact:last-child :first-child{
+      max-width: 20rem;
+    }
+    #nav-words{
+      font-size: 1.25rem;
+    }
+    
+
+    /* Psuedo-class placeholder-shown */
+    /* I don't think this is right.  */
+    :placeholder-shown {
+      background-color: lightcyan; 
+    }
+
+    /* chaff (this code isn't that important) */
+    footer{
+      background-color: lightgray;
+    }
+    
+    .contact * {
+      background-color: gray;
+    }
+    .socialmedia{
+      display: flex; 
+    }
+    
+    @media (max-width: 600px){
+      /* Footer. It looks so bad */
+      .contact {
+        flex-direction: column;
+      }
+      .nav-logo {
+        font-size: 2rem; 
+      }
+    }
+
+  </style>
 </head>
 <body>
   <!-- Sticky Navbar -->
@@ -27,7 +135,7 @@
 
   <!-- Fact 1: Image Left, Text Right -->
   <section id="fact1" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="assets/images/fact1.jpg" alt="Fact 1 Illustration" />
       </div>
@@ -36,14 +144,14 @@
         <p>Trees play a crucial role in absorbing carbon dioxide (CO₂) from the atmosphere. 
           Through the process of photosynthesis, trees take in CO₂ and <span class="important-text">convert it into oxygen and biomass</span>, helping to reduce the overall concentration of greenhouse gases.
           Forests act as natural carbon sinks, mitigating the effects of climate change by storing large amounts of carbon in their leaves, trunks, and roots.
-          In a typical year, forests absorb roughly <span class = "important-text">30%</span> of the carbon emissions produced by human activities such as burning fossil fuels. </p>
+          In a typical year, forests absorb roughly <span class="important-text">30%</span> of the carbon emissions produced by human activities such as burning fossil fuels. </p>
       </div>
     </div>
   </section>
 
   <!-- Fact 2: Text Left, Image Right -->
   <section id="fact2" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 2: Loss of Biodiversity</h2>
         <p>Deforestation leads to a significant loss of biodiversity as countless plant and animal species lose their natural habitats. 
@@ -59,7 +167,7 @@
 
   <!-- Fact 3: Image Left, Text Right -->
   <section id="fact3" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="images/fact3.jpg" alt="Climate Regulation" />
       </div>
@@ -72,7 +180,7 @@
 
   <!-- Fact 4: Text Left, Image Right -->
   <section id="fact4" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 4: Soil Erosion and Degradation</h2>
         <p>Tree roots stabilize soil. Without them, erosion increases, leading to landslides and reduced agricultural productivity [file:1].</p>
@@ -85,7 +193,7 @@
 
   <!-- Fact 5: Image Left, Text Right -->
   <section id="fact5" class="fact-section">
-    <div class="flex-container reverse">
+    <div class="flex-container">
       <div class="fact-image">
         <img src="images/fact5.jpg" alt="Water Cycle Disruption" />
       </div>
@@ -98,7 +206,7 @@
 
   <!-- Fact 6: Text Left, Image Right -->
   <section id="fact6" class="fact-section">
-    <div class="flex-container">
+    <div class="flex-container-reverse">
       <div class="fact-text">
         <h2>Fact 6: Contribution to Global Emissions</h2>
         <p>Deforestation accounts for nearly 15% of all greenhouse gas emissions—more than the entire global transportation sector [file:1].</p>
@@ -111,7 +219,54 @@
 
   <!-- Footer -->
   <footer class="footer">
-g    <p>&copy; 2025 Deforestation Awareness Project. All rights reserved.</p>
+    <!-- TODO make this into a block :) -->
+    <div class="contact">
+      <ul class="socialmedia">
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/openmoji/instagram -->
+            <img 
+              id="instagram" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNzIgNzIiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik00Ni43ODUgMTIuNjE0aC0yMS41N2MtNi45NiAwLTEyLjYwMSA1LjY0Mi0xMi42MDEgMTIuNjAxdjIxLjU3YzAgNi45NiA1LjY0MiAxMi42MDEgMTIuNjAyIDEyLjYwMWgyMS41NjhjNi45NiAwIDEyLjYwMi01LjY0MiAxMi42MDItMTIuNjAyVjI1LjIxNWMwLTYuOTYtNS42NDItMTIuNjAxLTEyLjYwMi0xMi42MDF6Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQ2Ljc4NSAxMi42MTRoLTIxLjU3Yy02Ljk2IDAtMTIuNjAxIDUuNjQyLTEyLjYwMSAxMi42MDF2MjEuNTdjMCA2Ljk2IDUuNjQyIDEyLjYwMSAxMi42MDIgMTIuNjAxaDIxLjU2OGM2Ljk2IDAgMTIuNjAyLTUuNjQyIDEyLjYwMi0xMi42MDJWMjUuMjE1YzAtNi45Ni01LjY0Mi0xMi42MDEtMTIuNjAyLTEyLjYwMXoiLz48Y2lyY2xlIGN4PSIzNiIgY3k9IjM2IiByPSIxMS4yOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjQ5LjcwOSIgY3k9IjIyLjI5MSIgcj0iMi40MTkiLz48L3N2Zz4=" 
+              alt="Instagram"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/icon-park-solid/facebook -->
+            <img 
+              id="facebook" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxtYXNrIGlkPSJpcFNGYWNlYm9vazAiPjxwYXRoIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzLjgiIGQ9Ik0zNiAxMi42aC02LjAxM2MtMS4wODYgMC0xLjk2Ny44OC0xLjk2NyAxLjk2N3Y2LjlIMzZsLTEuMTY5IDcuNTk3aC02LjgxVjQzaC04Ljc3NlYyOS4wNjRIMTJ2LTcuNTk3aDcuMTUxbC4wOTQtNy4yMWwtLjAxMy0xLjMxQTcuODY4IDcuODY4IDAgMCAxIDI3LjA5OSA1SDM2djcuNloiLz48L21hc2s+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMCAwaDQ4djQ4SDB6IiBtYXNrPSJ1cmwoI2lwU0ZhY2Vib29rMCkiLz48L3N2Zz4=" 
+              alt="facebook"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/ph/twitter-logo -->
+            <img 
+              id="twitter" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTI0Ny4zOSA2OC45NEE4IDggMCAwIDAgMjQwIDY0aC0zMC40M2E0OC42NiA0OC42NiAwIDAgMC00MS40Ny0yNGE0Ni45MSA0Ni45MSAwIDAgMC0zMy43NSAxMy43QTQ3LjkgNDcuOSAwIDAgMCAxMjAgODh2Ni4wOUM3OS43NCA4My40NyA0Ni44MSA1MC43MiA0Ni40NiA1MC4zN2E4IDggMCAwIDAtMTMuNjUgNC45MmMtNC4zMSA0Ny43OSA5LjU3IDc5Ljc3IDIyIDk4LjE4YTExMC45MyAxMTAuOTMgMCAwIDAgMjEuODggMjQuMmMtMTUuMjMgMTcuNTMtMzkuMjEgMjYuNzQtMzkuNDcgMjYuODRhOCA4IDAgMCAwLTMuODUgMTEuOTNjLjc1IDEuMTIgMy43NSA1LjA1IDExLjA4IDguNzJDNTMuNTEgMjI5LjcgNjUuNDggMjMyIDgwIDIzMmM3MC42NyAwIDEyOS43Mi01NC40MiAxMzUuNzUtMTI0LjQ0bDI5LjkxLTI5LjlhOCA4IDAgMCAwIDEuNzMtOC43MlptLTQ1IDI5LjQxYTggOCAwIDAgMC0yLjMyIDUuMTRDMTk2IDE2Ni41OCAxNDMuMjggMjE2IDgwIDIxNmMtMTAuNTYgMC0xOC0xLjQtMjMuMjItMy4wOGMxMS41MS02LjI1IDI3LjU2LTE3IDM3Ljg4LTMyLjQ4QTggOCAwIDAgMCA5MiAxNjkuMDhjLS40Ny0uMjctNDMuOTEtMjYuMzQtNDQtOTZjMTYgMTMgNDUuMjUgMzMuMTcgNzguNjcgMzguNzlBOCA4IDAgMCAwIDEzNiAxMDRWODhhMzIgMzIgMCAwIDEgOS42LTIyLjkyQTMwLjk0IDMwLjk0IDAgMCAxIDE2Ny45IDU2YzEyLjY2LjE2IDI0LjQ5IDcuODggMjkuNDQgMTkuMjFhOCA4IDAgMCAwIDcuMzMgNC43OWgxNloiLz48L3N2Zz4=" 
+              alt="twitter"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/images/github-mark.png" alt="GitHub"></img>
+          </a>
+        </li>
+        <ul class="contact3">
+          <li>Email</li>
+          <li>Phone</li>
+          <li>Location</li>
+        </ul>
+      </ul>
+      <div>
+        <p>&copy; 2025 Deforestation Awareness Project. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
