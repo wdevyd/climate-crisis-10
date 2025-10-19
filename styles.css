@@ -24,35 +24,45 @@ h2 {
     text-align: center;
 }
 
-#fact1 .important-text {
-    font-size: 2em;
+.important-text {
+    font-size: 1.8em;
     font-weight: bold;
+}
+
+#fact1 .important-text, #fact1 h2 {
     color: rgb(16, 80, 16);
 }
 
-#fact1 h2 {
-    color: rgb(16,80,16);
-}
-
-#fact2 .important-text{
-    font-size: 2em;
-    font-weight: bold;
+#fact2 .important-text , #fact2 h2 {
     color: rgb(214, 162, 19);
 }
 
-#fact2 h2 {
-    color: rgb(214, 162, 19);
-}
-
-#fact3 h2 {
+#fact3 .important-text, #fact3 h2 {
     color:rgb(105, 4, 4)
 }
 
-#fact3 .important-text{
-    font-size: 2em;
-    font-weight: bold;
-    color: rgb(105, 4, 4);
+#fact4 .important-text, #fact4 h2 {
+    color:rgb(95, 69, 21);
 }
+
+#fact5 .important-text, #fact5 h2 {
+    color:darkblue
+}
+
+#About-us h2 {
+    font-size: 2em;
+    color:rgb(16, 80, 16);
+}
+
+#About-us p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+  margin: 0 auto;
+}
+
 /* Image styles */
 
 header#home.hero img {
@@ -77,6 +87,14 @@ header#home.hero img {
 }
 
 
+#logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
 /* Container styles */
 
 .flex-container,
@@ -89,6 +107,12 @@ header#home.hero img {
 }
 
 
+#About-us .flex-container-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
 
 /* Mobile style */
 
