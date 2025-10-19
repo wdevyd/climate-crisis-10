@@ -7,25 +7,60 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html{
+      font-size: 110%; 
+    }
     .contact, .nav-container{
       display: flex; 
       align-items: center; 
       justify-content: space-between;
+    }
+    .nav-logo{
+      font-size:3rem; 
     }
     .nav-menu{
       display:flex; 
       gap: 1rem; 
     }
 
-    /* .contact3 {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 70px;  
-    } */
+    /* Psuedo-class: Active */
+    .fact-text:active {
+      background-color: #DDDDDD;
+    }
+
+    /* Psuedo-class: Hover */
+    a:hover{
+      color: red;
+      text-decoration: none;
+    }
+    .fact-text:hover{
+      background-color: #EEEEEE;
+    }
+    .fact-text:hover h2{
+      text-decoration: underline;
+    }
+
+    /* Psuedo-class: Focus */
+    /* it looks so bad i'm sorry */
+    a:focus{ 
+      outline: none;
+      background-color: lightcoral;
+    }
+
+    
+
+    /* chaff (this code isn't that important) */
+    footer{
+      /* ow my eyes */
+      background-color: lightgray;
+    }
     footer ul, .nav-menu{
       list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .contact * {
+      background-color: gray;
     }
 
   </style>
