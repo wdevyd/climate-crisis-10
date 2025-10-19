@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html{
-      font-size: 110%; 
-    }
     .contact, .nav-container{
       display: flex; 
       align-items: center; 
@@ -43,7 +40,7 @@
     
     /* Psuedo-class: any-link */
     :any-link:hover{
-      background-color: lightcoral;
+      background-color: lightcoral; 
       text-decoration: none;
     }
     /* Psuedo-class: focus */
@@ -51,6 +48,9 @@
     :where(:any-link:focus){ 
       outline: none;
       font-weight:1000; 
+    }
+    footer :where(img){
+      max-height: 4rem;
     }
     
     /* Psuedo-class: visited */
@@ -96,6 +96,16 @@
       display:flex; 
     }
 
+    /* Psuedo-class :first-child */
+    /* Psuedo-class :last-child */
+    .contact:last-child :first-child{
+      max-width: 20rem;
+    }
+    #nav-words{
+      font-size: 1.25rem;
+    }
+    
+
     /* Psuedo-class placeholder-shown */
     /* I don't think this is right.  */
     :placeholder-shown {
@@ -110,6 +120,9 @@
     .contact * {
       background-color: gray;
     }
+    .socialmedia{
+      display: flex; 
+    }
 
   </style>
 </head>
@@ -118,6 +131,10 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">Deforestation Facts</div>
+      <p id="nav-words"> 
+        6 facts about Deforestation
+      </p>
+      <p></p>
       <ul class="nav-menu">
         <li><a href="#">About us</a></li>
         <li><a href="#">Donate</a></li>
@@ -214,18 +231,51 @@
     <!-- TODO make this into a block :) -->
     <div class="contact">
       <ul class="socialmedia">
-        <li>Instagram</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/openmoji/instagram -->
+            <img 
+              id="instagram" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNzIgNzIiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik00Ni43ODUgMTIuNjE0aC0yMS41N2MtNi45NiAwLTEyLjYwMSA1LjY0Mi0xMi42MDEgMTIuNjAxdjIxLjU3YzAgNi45NiA1LjY0MiAxMi42MDEgMTIuNjAyIDEyLjYwMWgyMS41NjhjNi45NiAwIDEyLjYwMi01LjY0MiAxMi42MDItMTIuNjAyVjI1LjIxNWMwLTYuOTYtNS42NDItMTIuNjAxLTEyLjYwMi0xMi42MDF6Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQ2Ljc4NSAxMi42MTRoLTIxLjU3Yy02Ljk2IDAtMTIuNjAxIDUuNjQyLTEyLjYwMSAxMi42MDF2MjEuNTdjMCA2Ljk2IDUuNjQyIDEyLjYwMSAxMi42MDIgMTIuNjAxaDIxLjU2OGM2Ljk2IDAgMTIuNjAyLTUuNjQyIDEyLjYwMi0xMi42MDJWMjUuMjE1YzAtNi45Ni01LjY0Mi0xMi42MDEtMTIuNjAyLTEyLjYwMXoiLz48Y2lyY2xlIGN4PSIzNiIgY3k9IjM2IiByPSIxMS4yOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjQ5LjcwOSIgY3k9IjIyLjI5MSIgcj0iMi40MTkiLz48L3N2Zz4=" 
+              alt="Instagram"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/icon-park-solid/facebook -->
+            <img 
+              id="facebook" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxtYXNrIGlkPSJpcFNGYWNlYm9vazAiPjxwYXRoIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzLjgiIGQ9Ik0zNiAxMi42aC02LjAxM2MtMS4wODYgMC0xLjk2Ny44OC0xLjk2NyAxLjk2N3Y2LjlIMzZsLTEuMTY5IDcuNTk3aC02LjgxVjQzaC04Ljc3NlYyOS4wNjRIMTJ2LTcuNTk3aDcuMTUxbC4wOTQtNy4yMWwtLjAxMy0xLjMxQTcuODY4IDcuODY4IDAgMCAxIDI3LjA5OSA1SDM2djcuNloiLz48L21hc2s+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMCAwaDQ4djQ4SDB6IiBtYXNrPSJ1cmwoI2lwU0ZhY2Vib29rMCkiLz48L3N2Zz4=" 
+              alt="facebook"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!-- https://iconbuddy.com/ph/twitter-logo -->
+            <img 
+              id="twitter" 
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTI0Ny4zOSA2OC45NEE4IDggMCAwIDAgMjQwIDY0aC0zMC40M2E0OC42NiA0OC42NiAwIDAgMC00MS40Ny0yNGE0Ni45MSA0Ni45MSAwIDAgMC0zMy43NSAxMy43QTQ3LjkgNDcuOSAwIDAgMCAxMjAgODh2Ni4wOUM3OS43NCA4My40NyA0Ni44MSA1MC43MiA0Ni40NiA1MC4zN2E4IDggMCAwIDAtMTMuNjUgNC45MmMtNC4zMSA0Ny43OSA5LjU3IDc5Ljc3IDIyIDk4LjE4YTExMC45MyAxMTAuOTMgMCAwIDAgMjEuODggMjQuMmMtMTUuMjMgMTcuNTMtMzkuMjEgMjYuNzQtMzkuNDcgMjYuODRhOCA4IDAgMCAwLTMuODUgMTEuOTNjLjc1IDEuMTIgMy43NSA1LjA1IDExLjA4IDguNzJDNTMuNTEgMjI5LjcgNjUuNDggMjMyIDgwIDIzMmM3MC42NyAwIDEyOS43Mi01NC40MiAxMzUuNzUtMTI0LjQ0bDI5LjkxLTI5LjlhOCA4IDAgMCAwIDEuNzMtOC43MlptLTQ1IDI5LjQxYTggOCAwIDAgMC0yLjMyIDUuMTRDMTk2IDE2Ni41OCAxNDMuMjggMjE2IDgwIDIxNmMtMTAuNTYgMC0xOC0xLjQtMjMuMjItMy4wOGMxMS41MS02LjI1IDI3LjU2LTE3IDM3Ljg4LTMyLjQ4QTggOCAwIDAgMCA5MiAxNjkuMDhjLS40Ny0uMjctNDMuOTEtMjYuMzQtNDQtOTZjMTYgMTMgNDUuMjUgMzMuMTcgNzguNjcgMzguNzlBOCA4IDAgMCAwIDEzNiAxMDRWODhhMzIgMzIgMCAwIDEgOS42LTIyLjkyQTMwLjk0IDMwLjk0IDAgMCAxIDE2Ny45IDU2YzEyLjY2LjE2IDI0LjQ5IDcuODggMjkuNDQgMTkuMjFhOCA4IDAgMCAwIDcuMzMgNC43OWgxNloiLz48L3N2Zz4=" 
+              alt="twitter"> 
+            </img>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/github-mark.png" alt="GitHub"></img>
+          </a>
+        </li>
       </ul>
       <ul class="contact3">
         <li>Email</li>
         <li>Phone</li>
         <li>Location</li>
       </ul>
-      <p class="github">GitHub Repo</p>
+      <div>
+        <p>&copy; 2025 Deforestation Awareness Project. All rights reserved.</p>
+      </div>
     </div>
-    <p>&copy; 2025 Deforestation Awareness Project. All rights reserved.</p>
   </footer>
 </body>
 </html>
