@@ -19,6 +19,16 @@ body, html {
   padding:1rem;
   font-size: 1.2em;
 }
+/* Psuedo-class: active */
+.fact-text:active {
+  background-color: #DDDDDD;
+}
+
+/* Psuedo-class: hover */
+.fact-text:hover{
+  background-color: #EEEEEE;
+}
+
 
 h2 {
     text-align: center;
@@ -91,4 +101,88 @@ header#home.hero img {
     margin: 0 auto 1rem auto;
     display: block;
   }
+}
+
+.contact, .nav-container{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+}
+.navbar{
+  position: sticky;
+  z-index: 999999;
+  top: 0;   
+  background-color: white;
+}
+.nav-logo{
+  font-size:3rem; 
+}
+.nav-menu{
+  display:flex; 
+  gap: 1rem; 
+}
+
+
+/* Psuedo-class: any-link */
+:any-link:hover{
+  background-color: lightcoral; 
+  text-decoration: none;
+}
+/* Psuedo-class: focus */
+/* it looks so bad i'm sorry */
+:where(:any-link:focus){ 
+  outline: none;
+  font-weight:1000; 
+} 
+footer :where(img){
+  max-height: 4rem;
+}
+
+/* Psuedo-class: visited */
+a:visited{
+  color:red; 
+}
+
+/* Psuedo-class: where() */
+:is(ul){
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+:where(img){
+  max-height: 50vh; 
+}
+
+/* Psuedo-class: has() */
+/* it's becoming less meaningful */
+div:has(h2){
+  border: 1px solid black; 
+}
+
+/* Psuedo-class :first-child */
+/* Psuedo-class :last-child */
+.contact:last-child :first-child{
+  max-width: 20rem;
+}
+#nav-words{
+  font-size: 1.25rem;
+}
+
+
+/* Psuedo-class placeholder-shown */
+/* I don't think this is right.  */
+:placeholder-shown {
+  background-color: lightcyan; 
+}
+
+/* chaff (this code isn't that important) */
+footer{
+  background-color: lightgray;
+}
+
+.contact * {
+  background-color: gray;
+}
+.socialmedia{
+  display: flex; 
 }
