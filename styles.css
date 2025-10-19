@@ -24,7 +24,7 @@ h2 {
     text-align: center;
 }
 
-#fact1.important-text {
+#fact1 .important-text {
     font-size: 2em;
     font-weight: bold;
     color: rgb(16, 80, 16);
@@ -34,13 +34,25 @@ h2 {
     color: rgb(16,80,16);
 }
 
-#fact2.imporant-text {
+#fact2 .important-text{
     font-size: 2em;
     font-weight: bold;
     color: rgb(214, 162, 19);
 }
 
+#fact2 h2 {
+    color: rgb(214, 162, 19);
+}
 
+#fact3 h2 {
+    color:rgb(105, 4, 4)
+}
+
+#fact3 .important-text{
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(105, 4, 4);
+}
 /* Image styles */
 
 header#home.hero img {
@@ -61,6 +73,7 @@ header#home.hero img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 10%;
 }
 
 
@@ -70,7 +83,7 @@ header#home.hero img {
 .flex-container-reverse {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   flex-direction: row;
   padding: 2rem;
 }
