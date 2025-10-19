@@ -88,7 +88,6 @@
     }
     :is(.flex-container, .flex-container-reverse){
       display:flex; 
-      flex-direction: row;
       justify-content: space-between;
     }
     :is(.flex-container, .flex-container-reverse) * {
@@ -123,6 +122,16 @@
     .socialmedia{
       display: flex; 
     }
+    
+    @media (max-width: 600px){
+      /* Footer. It looks so bad */
+      .contact {
+        flex-direction: column;
+      }
+      .nav-logo {
+        font-size: 2rem; 
+      }
+    }
 
   </style>
 </head>
@@ -131,10 +140,6 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">Deforestation Facts</div>
-      <p id="nav-words"> 
-        6 facts about Deforestation
-      </p>
-      <p></p>
       <ul class="nav-menu">
         <li><a href="#">About us</a></li>
         <li><a href="#">Donate</a></li>
