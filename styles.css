@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: beige;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 body, html {
     font-family: 'Lora', serif;
     margin: 0;
@@ -163,6 +172,19 @@ h2 {
         order: -1; /* Force image to come first */
         margin-bottom: 0;
   }
+  
+  .hamburger { display: block; }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 4rem;
+    flex-direction: column;
+    background-color: rgb(16, 80, 16);
+    width: 100%;
+    transition: 0.2s;
+  }
+  .nav-menu.active { left: 0; }
 
 }
 
@@ -194,7 +216,7 @@ h2 {
 .nav-logo-icon {
   height: 2.3em;    /* adapte la taille de l'icône */
   width: auto;
-  background-color: white;
+  background-color: beige;
 }
 
 .nav-menu{

@@ -11,8 +11,13 @@
   <!-- Sticky Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="nav-logo">Save The Trees</div>
-      <ul class="nav-menu">
+      <div class="nav-logo">
+        <img src ="assets/images/treeLogo.svg", alt="Save the Trees logo", class="nav-logo-icon">
+        Save The Trees.
+      </div>
+    <button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
         <li><a href="#About-us">About us</a></li>
         <li><a href="#">Donate</a></li>
         <li><a href="#">Contact</a></li>
@@ -171,5 +176,6 @@
     </div>
   </footer>
 </body>
+<script src="scripts/script.js"></script>
 </html>
 
