@@ -168,6 +168,7 @@ h2 {
 
 .contact, .nav-container{
   display: flex; 
+  flex-wrap:wrap;
   align-items: center; 
   justify-content: space-between;
 }
@@ -229,6 +230,10 @@ h2 {
 footer :where(img){
   max-height: 4rem;
 }
+footer{
+  background-color: rgb(16, 80, 16);
+  color: beige; 
+}
 
 /* Psuedo-class: visited */
 a:visited{
@@ -251,11 +256,6 @@ a:visited{
   border: 1px solid black; 
 }
 
-/* Psuedo-class :first-child */
-/* Psuedo-class :last-child */
-.contact:last-child :first-child{
-  max-width: 20rem;
-}
 #nav-words{
   font-size: 1.25rem;
 }
@@ -266,15 +266,14 @@ a:visited{
 :placeholder-shown {
   background-color: lightcyan; 
 }
-
-/* chaff (this code isn't that important) */
-footer{
-  background-color: lightgray;
-}
-
-.contact * {
-  background-color: gray;
-}
 .socialmedia{
   display: flex; 
+  flex-wrap: wrap;
+}
+.contact3{
+  padding-left: 1rem;
+  min-width: 10rem;
+}
+#copyright{
+  min-width: 15rem; 
 }
