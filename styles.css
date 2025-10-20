@@ -169,9 +169,18 @@ h2 {
   background-color: rgb(16, 80, 16);
 }
 .nav-logo{
-  font-size:2rem;
-  color: beige;
-  font-weight: bold;
+    display: flex;
+    font-size:2rem;
+    color: beige;
+    font-weight: bold;
+    align-items: center;
+    gap:1rem;
+}
+
+.nav-logo-icon {
+  height: 2.3em;    /* adapte la taille de l'icône */
+  width: auto;
+  background-color: white;
 }
 
 .nav-menu{
