@@ -22,7 +22,6 @@ body, html {
 }
 
 /* Text styles */
-
 .fact-section {
     margin-bottom: 30px;
     background-color: beige;
@@ -92,6 +91,7 @@ h2 {
 
 
 /* Image styles */
+
 
 .hero {
     position: relative;
@@ -167,7 +167,7 @@ h2 {
     height: auto;
     display: block;
     margin:0;
-    border-radius: 0;
+    border-radius: 1;
   }
 
   .fact-image {
